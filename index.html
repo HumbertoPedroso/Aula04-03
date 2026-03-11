@@ -6,6 +6,181 @@
     <title>Aula1</title>
 </head>
 <body>
-    <p>s</p>
+    <script>
+        
+        // 1. Leia um nome via prompt() e exiba no alert e console
+        let nome = prompt("Digite seu nome:");
+        alert("Olá, " + nome);
+        console.log("Nome digitado:", nome);
+
+
+        // 2. Leia dois números e mostre as quatro operações
+        let n1 = Number(prompt("Digite o primeiro número:"));
+        let n2 = Number(prompt("Digite o segundo número:"));
+
+        alert(
+            "Soma: " + (n1+n2) +
+            "\nSubtração: " + (n1-n2) +
+            "\nMultiplicação: " + (n1*n2) +
+            "\nDivisão: " + (n1/n2)
+        );
+
+
+        // 3. Verifique se um número é par ou ímpar
+        let num = Number(prompt("Digite um número:"));
+
+        if(num % 2 === 0){
+            alert("Número par");
+        }else{
+            alert("Número ímpar");
+        }
+
+
+        // 4. Leia três números e mostre maior e menor
+        let a = Number(prompt("Número 1:"));
+        let b = Number(prompt("Número 2:"));
+        let c = Number(prompt("Número 3:"));
+
+        let maior = Math.max(a,b,c);
+        let menor = Math.min(a,b,c);
+
+        alert("Maior: " + maior + "\nMenor: " + menor);
+
+
+        // 5. Média de três notas
+        let nota1 = Number(prompt("Nota 1:"));
+        let nota2 = Number(prompt("Nota 2:"));
+        let nota3 = Number(prompt("Nota 3:"));
+
+        let media = (nota1 + nota2 + nota3)/3;
+
+        if(media >= 7){
+            alert("Média: " + media + "\nAprovado");
+        }else{
+            alert("Média: " + media + "\nReprovado");
+        }
+
+
+        // 6. Tabuada de um número
+        let t = Number(prompt("Digite um número para tabuada:"));
+        let resultado = "";
+
+        for(let i=1;i<=10;i++){
+            resultado += t + " x " + i + " = " + (t*i) + "\n";
+        }
+
+        alert(resultado);
+
+
+        // 7. Fatorial
+        let f = Number(prompt("Digite um número para fatorial:"));
+        let fat = 1;
+
+        for(let i=1;i<=f;i++){
+            fat *= i;
+        }
+
+        alert("Fatorial: " + fat);
+
+
+        // 8. Verificar se é primo
+        let p = Number(prompt("Digite um número:"));
+        let primo = true;
+
+        for(let i=2;i<p;i++){
+            if(p % i === 0){
+                primo = false;
+            }
+        }
+
+        if(primo && p > 1){
+            alert("Número primo");
+        }else{
+            alert("Não é primo");
+        }
+
+
+        // 9. Converter temperatura
+        let temp = Number(prompt("Digite temperatura:"));
+        let tipo = prompt("Digite C para Celsius ou F para Fahrenheit");
+
+        if(tipo === "C"){
+            alert("Fahrenheit: " + ((temp*9/5)+32));
+        }else{
+            alert("Celsius: " + ((temp-32)*5/9));
+        }
+
+
+        // 10. Somar valores de um array
+        let arr = [10,20,30,40];
+        let soma = 0;
+
+        for(let v of arr){
+            soma += v;
+        }
+
+        alert("Soma do array: " + soma);
+
+
+        // 11. Maior, menor e média do array
+        let arr2 = [5,9,3,8,2];
+
+        let maior2 = Math.max(...arr2);
+        let menor2 = Math.min(...arr2);
+        let media2 = arr2.reduce((a,b)=>a+b)/arr2.length;
+
+        alert(
+            "Maior: " + maior2 +
+            "\nMenor: " + menor2 +
+            "\nMédia: " + media2
+        );  
+
+
+        // 12. Remover duplicados
+        let duplicados = [1,2,2,3,4,4,5];
+        let semDuplicados = [...new Set(duplicados)];
+
+        alert("Array sem duplicados: " + semDuplicados);
+
+
+        // 13. Ordenar objetos por idade
+        let pessoas = [
+            {nome:"Ana", idade:25},
+            {nome:"João", idade:18},
+            {nome:"Carlos", idade:30}
+        ];
+
+        pessoas.sort((a,b)=>a.idade-b.idade);
+
+        alert("Ordenado por idade: " + JSON.stringify(pessoas));
+
+
+        // 14. Aplicar 10% de desconto
+        let precos = [100,200,300];
+
+        let desconto = precos.map(p=>p*0.9);
+
+        alert("Preços com desconto: " + desconto);
+
+
+        // 15. Buscar objeto por índice
+        let produtos = [
+            {nome:"Notebook"},
+            {nome:"Mouse"},
+            {nome:"Teclado"}
+        ];
+
+        let indice = Number(prompt("Digite índice do produto:"));
+
+        alert("Produto: " + JSON.stringify(produtos[indice]));
+
+
+        // 16. Contar palavras
+        let frase = prompt("Digite uma frase:");
+        let palavras = frase.split(" ");
+
+        alert("Quantidade de palavras: " + palavras.length);
+
+    </script>
 </body>
 </html>
